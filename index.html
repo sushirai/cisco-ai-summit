@@ -8,6 +8,7 @@
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap');
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
 
   body {
     font-family: 'Inter', sans-serif;
@@ -32,10 +33,7 @@
     color: rgba(255,255,255,0.35);
     font-weight: 600;
   }
-
-  .top-bar span {
-    color: #4ecdc4;
-  }
+  .top-bar span { color: #4ecdc4; }
 
   /* ── Hero ── */
   .hero {
@@ -43,7 +41,6 @@
     background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
     border-bottom: 1px solid rgba(255,255,255,0.06);
   }
-
   .hero-label {
     font-size: 11px;
     letter-spacing: 3px;
@@ -52,7 +49,6 @@
     margin-bottom: 16px;
     font-weight: 600;
   }
-
   .hero h1 {
     font-family: 'Playfair Display', serif;
     font-size: clamp(32px, 5vw, 52px);
@@ -61,7 +57,6 @@
     color: #fff;
     max-width: 700px;
   }
-
   .hero .subtitle {
     font-size: 15px;
     color: rgba(255,255,255,0.4);
@@ -78,18 +73,16 @@
     gap: 60px;
   }
 
-  /* ── Left sidebar (sticky) ── */
+  /* ── Left sidebar ── */
   .sidebar {
     width: 280px;
     flex-shrink: 0;
     padding-top: 60px;
   }
-
   .sidebar-inner {
     position: sticky;
     top: 60px;
   }
-
   .speaker-name {
     font-family: 'Playfair Display', serif;
     font-size: 28px;
@@ -97,42 +90,31 @@
     color: #fff;
     margin-bottom: 4px;
   }
-
   .speaker-role {
     font-size: 14px;
     color: #4ecdc4;
     font-weight: 500;
     margin-bottom: 20px;
   }
-
   .speaker-bio {
-    font-size: 13px;
+    font-size: 13.5px;
     color: rgba(255,255,255,0.45);
-    line-height: 1.75;
-    margin-bottom: 32px;
-  }
-
-  .divider {
-    height: 1px;
-    background: rgba(255,255,255,0.08);
-    margin-bottom: 28px;
+    line-height: 1.8;
+    margin-bottom: 24px;
   }
 
   /* ── Video link ── */
   .video-link {
     display: block;
     text-decoration: none;
-    margin-top: 16px;
-    margin-bottom: 8px;
+    margin-bottom: 28px;
   }
-
   .video-thumb {
     position: relative;
     border-radius: 8px;
     overflow: hidden;
     aspect-ratio: 16/9;
   }
-
   .video-thumb img {
     width: 100%;
     height: 100%;
@@ -140,11 +122,7 @@
     filter: brightness(0.7);
     transition: filter 0.3s ease;
   }
-
-  .video-link:hover .video-thumb img {
-    filter: brightness(0.9);
-  }
-
+  .video-link:hover .video-thumb img { filter: brightness(0.9); }
   .play-overlay {
     position: absolute;
     top: 50%;
@@ -159,15 +137,8 @@
     justify-content: center;
     transition: background 0.2s;
   }
-
-  .video-link:hover .play-overlay {
-    background: rgba(78, 205, 196, 0.8);
-  }
-
-  .play-overlay svg {
-    margin-left: 3px;
-  }
-
+  .video-link:hover .play-overlay { background: rgba(78, 205, 196, 0.8); }
+  .play-overlay svg { margin-left: 3px; }
   .video-time {
     position: absolute;
     bottom: 6px;
@@ -178,53 +149,62 @@
     padding: 2px 6px;
     border-radius: 4px;
     font-weight: 500;
-    letter-spacing: 0.5px;
   }
-
   .video-label {
     display: block;
     font-size: 11px;
     color: rgba(255,255,255,0.35);
     margin-top: 8px;
-    letter-spacing: 0.5px;
   }
 
-  /* ── TL;DR in sidebar ── */
-  .tldr-label {
+  /* ── Sidebar nav (appears after scroll) ── */
+  .sidebar-nav {
+    opacity: 0;
+    transform: translateY(8px);
+    transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    pointer-events: none;
+  }
+  .sidebar-nav.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+  }
+  .divider {
+    height: 1px;
+    background: rgba(255,255,255,0.08);
+    margin-bottom: 20px;
+  }
+  .nav-label {
     font-size: 10px;
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.25);
-    margin-bottom: 16px;
+    color: rgba(255,255,255,0.2);
+    margin-bottom: 14px;
     font-weight: 700;
   }
-
-  .tldr-list {
+  .nav-list {
     list-style: none;
     padding: 0;
   }
-
-  .tldr-list li {
-    font-size: 12.5px;
-    color: rgba(255,255,255,0.35);
-    line-height: 1.6;
-    padding: 8px 0 8px 16px;
+  .nav-list li {
+    font-size: 12px;
+    color: rgba(255,255,255,0.3);
+    line-height: 1.55;
+    padding: 7px 0 7px 14px;
     position: relative;
-    cursor: default;
+    cursor: pointer;
     transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
     border-left: 2px solid rgba(255,255,255,0.06);
     transform: translateX(0);
   }
-
-  .tldr-list li.active {
+  .nav-list li:hover { color: rgba(255,255,255,0.6); }
+  .nav-list li.active {
     color: rgba(255,255,255,0.95);
     font-weight: 600;
     border-left-color: #4ecdc4;
     transform: translateX(4px);
-    transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
   }
-
-  .tldr-list li.active::after {
+  .nav-list li.active::after {
     content: '';
     position: absolute;
     left: -2px;
@@ -242,13 +222,51 @@
     padding: 60px 0 120px;
   }
 
+  /* ── TL;DR at top of article ── */
+  .tldr-opener {
+    margin-bottom: 56px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .tldr-opener .label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #4ecdc4;
+    margin-bottom: 20px;
+    font-weight: 700;
+  }
+  .tldr-opener ul {
+    list-style: none;
+    padding: 0;
+  }
+  .tldr-opener li {
+    font-size: 15px;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.75;
+    padding: 10px 0 10px 20px;
+    position: relative;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+  .tldr-opener li:last-child { border-bottom: none; }
+  .tldr-opener li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #4ecdc4;
+    font-weight: 600;
+  }
+  .tldr-opener li:hover { color: #fff; }
+
+  /* ── Narrative ── */
   .pull-quote {
     margin: 48px 0;
     padding: 36px 0;
     border-top: 1px solid rgba(255,255,255,0.06);
     border-bottom: 1px solid rgba(255,255,255,0.06);
   }
-
   .pull-quote p {
     font-family: 'Playfair Display', serif;
     font-size: clamp(20px, 3vw, 26px);
@@ -256,36 +274,22 @@
     line-height: 1.5;
     color: #fff;
   }
-
   .pull-quote .attribution {
     font-family: 'Inter', sans-serif;
     font-style: normal;
     font-size: 12px;
     color: rgba(255,255,255,0.3);
     margin-top: 14px;
-    letter-spacing: 0.5px;
   }
-
-  .narrative-section {
-    margin-bottom: 8px;
-  }
-
+  .narrative-section { margin-bottom: 8px; scroll-margin-top: 80px; }
   .narrative-section p {
     font-size: 16px;
     line-height: 1.85;
     color: rgba(255,255,255,0.7);
     margin-bottom: 24px;
   }
-
-  .narrative-section strong {
-    color: #fff;
-    font-weight: 600;
-  }
-
-  .narrative-section .highlight {
-    color: #4ecdc4;
-    font-weight: 500;
-  }
+  .narrative-section strong { color: #fff; font-weight: 600; }
+  .narrative-section .highlight { color: #4ecdc4; font-weight: 500; }
 
   .insight-card {
     background: rgba(78, 205, 196, 0.05);
@@ -294,7 +298,6 @@
     padding: 24px 28px;
     margin: 32px 0;
   }
-
   .insight-card .label {
     font-size: 10px;
     letter-spacing: 2px;
@@ -303,7 +306,6 @@
     margin-bottom: 10px;
     font-weight: 600;
   }
-
   .insight-card p {
     font-size: 14px;
     color: rgba(255,255,255,0.75);
@@ -322,35 +324,13 @@
 
   /* ── Mobile ── */
   @media (max-width: 768px) {
-    .content-wrap {
-      flex-direction: column;
-      padding: 0 24px;
-      gap: 0;
-    }
-
-    .sidebar {
-      width: 100%;
-      padding-top: 40px;
-      padding-bottom: 32px;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-    }
-
-    .sidebar-inner {
-      position: relative;
-      top: 0;
-    }
-
-    .main-content {
-      padding: 40px 0 80px;
-    }
-
-    .hero {
-      padding: 60px 24px 40px;
-    }
-
-    .top-bar {
-      padding: 12px 24px;
-    }
+    .content-wrap { flex-direction: column; padding: 0 24px; gap: 0; }
+    .sidebar { width: 100%; padding-top: 40px; padding-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .sidebar-inner { position: relative; top: 0; }
+    .sidebar-nav { display: none; }
+    .main-content { padding: 40px 0 80px; }
+    .hero { padding: 60px 24px 40px; }
+    .top-bar { padding: 12px 24px; }
   }
 </style>
 </head>
@@ -374,7 +354,7 @@
       <div class="speaker-name">Sam Altman</div>
       <div class="speaker-role">CEO, OpenAI</div>
       <div class="speaker-bio">
-        Introduced by G2 Patel as "the person that actually created the movement — man needs no introduction." Cisco revealed they're OpenAI's first design partner for Codex, with AI Defense going 100% Codex-written within weeks.
+        CEO of OpenAI, the company behind ChatGPT, GPT-5, and Codex. Runs the most influential AI lab in the world. Previously president of Y Combinator.
       </div>
 
       <a href="https://www.youtube.com/live/YO2PVbtpb_A?t=1094" target="_blank" class="video-link">
@@ -388,37 +368,52 @@
         <span class="video-label">Watch this segment</span>
       </a>
 
-      <div class="divider"></div>
-
-      <div class="tldr-label">TL;DR</div>
-      <ul class="tldr-list">
-        <li data-section="s1">AI coding agents have crossed a threshold — entire products are now being written without human code</li>
-        <li data-section="s2">The endgame isn't AI tools, it's AI that can build and run entire companies autonomously</li>
-        <li data-section="s3">Even the CEO of OpenAI couldn't resist giving an AI agent full control of his computer — the productivity gain is that compelling</li>
-        <li data-section="s4">Your existing software stack (Slack, CRMs, etc.) will break when AI agents and humans try to share the same tools</li>
-        <li data-section="s5">AI is already far more capable than what enterprises use it for — the gap is the widest it's ever been, and companies slow to adopt will lose</li>
-        <li data-section="s6">Expect models to feel roughly 10x better by end of 2026 — and demand for AI compute to grow like electricity demand: infinite at the right price</li>
-      </ul>
+      <!-- Nav appears when TL;DR scrolls out of view -->
+      <div class="sidebar-nav" id="sidebarNav">
+        <div class="divider"></div>
+        <div class="nav-label">Sections</div>
+        <ul class="nav-list">
+          <li data-target="s1">AI coding agents crossed a threshold</li>
+          <li data-target="s2">Endgame: full AI companies</li>
+          <li data-target="s3">The two-hour capitulation</li>
+          <li data-target="s4">Your software stack will break</li>
+          <li data-target="s5">The capability overhang</li>
+          <li data-target="s6">10x better by end of 2026</li>
+        </ul>
+      </div>
     </div>
   </aside>
 
   <!-- RIGHT CONTENT -->
   <main class="main-content">
 
+    <!-- TL;DR as article opener -->
+    <div class="tldr-opener" id="tldrOpener">
+      <div class="label">Key Takeaways</div>
+      <ul>
+        <li data-target="s1">AI coding agents have crossed a threshold — entire products are now being written without human code</li>
+        <li data-target="s2">The endgame isn't AI tools, it's AI that can build and run entire companies autonomously</li>
+        <li data-target="s3">Even the CEO of OpenAI couldn't resist giving an AI agent full control of his computer — the productivity gain is that compelling</li>
+        <li data-target="s4">Your existing software stack will break when AI agents and humans try to share the same tools</li>
+        <li data-target="s5">AI is already far more capable than what enterprises use it for — the gap is the widest it's ever been, and companies slow to adopt will lose</li>
+        <li data-target="s6">Expect models to feel roughly 10x better by end of 2026 — demand for AI compute will grow like electricity: infinite at the right price</li>
+      </ul>
+    </div>
+
     <div class="pull-quote">
       <p>"I swore I'd never give Codex full control of my computer. That lasted about two hours."</p>
       <div class="attribution">— Sam Altman, on agent autonomy</div>
     </div>
 
-    <div class="narrative-section" data-section="s1">
+    <div class="narrative-section" id="s1" data-section="s1">
       <p>Altman opened with a personal confession: Codex, OpenAI's coding agent, gave him his biggest "update" on AI in a long time — <strong>a second ChatGPT moment</strong>. He anchored this immediately in Cisco's own experience, noting G2's team would have 100% of AI Defense code written by Codex within weeks. Not a demo — a proof point from the interviewer's own company.</p>
     </div>
 
-    <div class="narrative-section" data-section="s2">
+    <div class="narrative-section" id="s2" data-section="s2">
       <p>From there he escalated deliberately. He moved from coding agents to <span class="highlight">"full AI companies"</span> — AI that doesn't just write software but builds a business around it. Called it "the upper limit I can currently think about," his way of saying the ceiling keeps moving.</p>
     </div>
 
-    <div class="narrative-section" data-section="s3">
+    <div class="narrative-section" id="s3" data-section="s3">
       <p>Then came a fascinatingly honest admission. He installed Codex, swore he'd never give it full control — <strong>lasted about two hours</strong> before caving because it was too useful. Now runs two laptops because he couldn't resist giving AI full access to his sessions. This personal anecdote conveyed more about agentic AI's power than any benchmark.</p>
     </div>
 
@@ -427,11 +422,11 @@
       <p>The real blockers aren't about model intelligence. They're about the fact that <strong>your existing software stack isn't built for a world where agents and humans share the same tools.</strong></p>
     </div>
 
-    <div class="narrative-section" data-section="s4">
+    <div class="narrative-section" id="s4" data-section="s4">
       <p>He laid out what he sees as the real blockers — and none were about model intelligence. First: the security and data access paradigm hasn't been invented yet. Second: software needs rewriting for dual human-AI use. He illustrated this with a wonderfully mundane example — his AI agent reads Slack threads but marks everything as read, breaking his workflow. A "silly" example aimed directly at every CIO in the room: <strong>your software stack isn't built for a world where agents and humans share the same tools</strong>.</p>
     </div>
 
-    <div class="narrative-section" data-section="s5">
+    <div class="narrative-section" id="s5" data-section="s5">
       <p>The deepest concept was the <span class="highlight">"capability overhang"</span> — the gap between what AI <em>can</em> do and what organizations actually use it for. He said this gap feels bigger now than it was right before ChatGPT launched, even though everyone's already using AI. His advice was blunt: companies that can't quickly adopt "AI co-workers" will be at a huge disadvantage, and getting there requires thinking of AI as a <strong>teammate, not a tool</strong>.</p>
     </div>
 
@@ -440,7 +435,7 @@
       <div class="attribution">— Sam Altman, on enterprise adoption</div>
     </div>
 
-    <div class="narrative-section" data-section="s6">
+    <div class="narrative-section" id="s6" data-section="s6">
       <p>He closed on scale, framing AI demand like electricity — infinite at the right price. Predicted a <strong>10x improvement in models by end of 2026</strong>. When pressed on imagination limits, offered a vision from billions of humanoid robots to Von Neumann probes in space — then admitted "beyond that, I got no idea." A rare moment of genuine humility from someone who otherwise projected total conviction that AI is about to reshape everything.</p>
     </div>
 
@@ -452,30 +447,48 @@
 </div>
 
 <script>
-// Intersection Observer for scroll-linked TL;DR highlighting
-const sections = document.querySelectorAll('.narrative-section[data-section]');
-const tldrItems = document.querySelectorAll('.tldr-list li[data-section]');
+// ── Show sidebar nav when TL;DR scrolls out of view ──
+const tldrOpener = document.getElementById('tldrOpener');
+const sidebarNav = document.getElementById('sidebarNav');
 
-const observer = new IntersectionObserver((entries) => {
+const tldrObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      const sectionId = entry.target.dataset.section;
-      
-      tldrItems.forEach(item => {
-        if (item.dataset.section === sectionId) {
-          item.classList.add('active');
-        } else {
-          item.classList.remove('active');
-        }
+      sidebarNav.classList.remove('visible');
+    } else {
+      sidebarNav.classList.add('visible');
+    }
+  });
+}, { threshold: 0 });
+
+tldrObserver.observe(tldrOpener);
+
+// ── Scroll-linked section highlighting ──
+const sections = document.querySelectorAll('.narrative-section[data-section]');
+const navItems = document.querySelectorAll('.nav-list li[data-target]');
+
+const sectionObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.dataset.section;
+      navItems.forEach(item => {
+        item.classList.toggle('active', item.dataset.target === id);
       });
     }
   });
-}, {
-  rootMargin: '-20% 0px -60% 0px',
-  threshold: 0
-});
+}, { rootMargin: '-20% 0px -60% 0px', threshold: 0 });
 
-sections.forEach(section => observer.observe(section));
+sections.forEach(s => sectionObserver.observe(s));
+
+// ── Click to scroll (both TL;DR opener and sidebar nav) ──
+document.querySelectorAll('[data-target]').forEach(item => {
+  item.addEventListener('click', () => {
+    const target = document.getElementById(item.dataset.target);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  });
+});
 </script>
 
 </body>
