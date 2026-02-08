@@ -55,6 +55,12 @@
   </aside>
 
   <main class="main-content">
+    <div class="content-tabs">
+      <button class="content-tab active" data-tab="narrative">Narrative</button>
+      <button class="content-tab" data-tab="quicktake">Quick Take</button>
+    </div>
+
+    <div class="tab-content active" id="tab-narrative">
     <div class="tldr-opener" id="tldrOpener" data-section="tldrOpener">
       <div class="label">Key Takeaways</div>
       <ul>
@@ -111,6 +117,47 @@
       <div class="section-label"><span class="num">06</span> 10x better by end of 2026 <span class="line"></span></div>
       <p>He closed on scale, framing AI demand like electricity — infinite at the right price. Predicted a <strong>10x improvement in models by end of 2026</strong>. When pressed on imagination limits, offered a vision from billions of humanoid robots to Von Neumann probes in space — then admitted "beyond that, I got no idea." A rare moment of genuine humility from someone who otherwise projected total conviction that AI is about to reshape everything.</p>
     </div>
+    </div><!-- /tab-narrative -->
+
+    <div class="tab-content" id="tab-quicktake">
+      <div class="quick-take">
+        <div class="qt-section">
+          <div class="qt-label">TL;DR</div>
+          <div class="qt-tldr">We are in a period of "capability overhang" where models are far more powerful than current usage reflects, and the shift to "agentic" workflows — where AI acts as a teammate rather than a tool — is the next massive transformation.</div>
+        </div>
+
+        <div class="qt-section">
+          <div class="qt-label">Top 3 Points</div>
+          <ul class="qt-points">
+            <li>
+              <div class="qt-point-title">Agentic Workflow</div>
+              <div class="qt-point-body">The future of knowledge work involves giving AI agents full control of computing environments (browsers, terminals) to perform complex tasks, shifting the paradigm from a transactional tool to a collaborator.</div>
+            </li>
+            <li>
+              <div class="qt-point-title">Capability Overhang</div>
+              <div class="qt-point-body">The gap between what models can do and what businesses are actually using them for is the widest it has ever been; adoption is surprisingly slow relative to the technology's power.</div>
+            </li>
+            <li>
+              <div class="qt-point-title">Infrastructure Demand</div>
+              <div class="qt-point-body">Demand for AI is like demand for energy; if you make it cheap and capable enough, the world will consume vastly more tokens than current projections suggest.</div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="qt-section">
+          <div class="qt-label">Best Quote</div>
+          <div class="qt-quote">
+            <p>"I think the companies that are not set up to be able to adopt… AI co-workers very quickly… will be at a huge disadvantage."</p>
+          </div>
+        </div>
+
+        <div class="qt-section">
+          <div class="qt-label">Why It Matters</div>
+          <div class="qt-why">Altman provides a glimpse into the near future where AI agents execute end-to-end work (like coding an entire app), warning enterprises that failing to reorganize their workflows for "AI teammates" will leave them obsolete.</div>
+        </div>
+      </div>
+    </div><!-- /tab-quicktake -->
+
   </main>
 </div>
 
@@ -140,6 +187,16 @@ sections.forEach(s => sectionObserver.observe(s));
 function setActiveNav(id) {
   navItems.forEach(item => item.classList.toggle('active', item.dataset.target === id));
 }
+
+// ── Tab switching ──
+document.querySelectorAll('.content-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.content-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+  });
+});
 
 document.querySelectorAll('[data-target]').forEach(item => {
   item.addEventListener('click', () => {
