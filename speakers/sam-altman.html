@@ -243,6 +243,8 @@ document.querySelectorAll('.content-tab').forEach(tab => {
     tab.classList.add('active');
     document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
     rebuildNav(tab.dataset.tab === 'quicktake' ? quickTakeNav : narrativeNav);
+    // Scroll to top of tabs so content is always visible
+    document.querySelector('.content-tabs').scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 });
 
