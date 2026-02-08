@@ -243,7 +243,6 @@ document.querySelectorAll('.content-tab').forEach(tab => {
     tab.classList.add('active');
     document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
     rebuildNav(tab.dataset.tab === 'quicktake' ? quickTakeNav : narrativeNav);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 });
 
