@@ -25,15 +25,138 @@
     <div class="sidebar-inner">
       <div class="speaker-name">Aaron Levie</div>
       <div class="speaker-role">CEO, Box</div>
-      <div class="speaker-bio">Speaker biography coming soon.</div>
+      <div class="speaker-bio">CEO and co-founder of Box, the enterprise content cloud platform. One of the most vocal voices on how AI will reshape enterprise software, SaaS economics, and knowledge work.</div>
+
+      <a href="https://www.youtube.com/live/YO2PVbtpb_A?t=7200" target="_blank" class="video-link">
+        <div class="video-thumb">
+          <img src="https://img.youtube.com/vi/YO2PVbtpb_A/hqdefault.jpg" alt="Watch segment" />
+          <div class="play-overlay">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          </div>
+          <div class="video-time">120:00</div>
+        </div>
+        <span class="video-label">Watch this segment</span>
+      </a>
+
+      <div class="sidebar-nav" id="sidebarNav">
+        <div class="divider"></div>
+        <div class="nav-label">Sections</div>
+        <ul class="nav-list">
+          <li data-target="tldrOpener">Key Takeaways</li>
+          <li data-target="s1">A tale of two adoption curves</li>
+          <li data-target="s2">The verifiability gap</li>
+          <li data-target="s3">Adapt to how agents work</li>
+          <li data-target="s4">SaaS is not dead — it's evolving</li>
+          <li data-target="s5">Use agents to be more ambitious</li>
+        </ul>
+      </div>
     </div>
   </aside>
 
-  <div class="coming-soon">
-    <h2>Aaron Levie</h2>
-    <div class="cs-role">CEO, Box</div>
-    <div class="cs-msg">Analysis coming soon</div>
-  </div>
+  <main class="main-content">
+    <div class="content-tabs">
+      <button class="content-tab active" data-tab="narrative">Narrative</button>
+      <button class="content-tab" data-tab="quicktake">Quick Take</button>
+    </div>
+
+    <div class="tab-content active" id="tab-narrative">
+    <div class="tldr-opener" id="tldrOpener" data-section="tldrOpener">
+      <div class="label">Key Takeaways</div>
+      <ul>
+        <li data-target="s1">AI adoption is a "tale of two cities" — engineering sprints ahead because code is verifiable, while knowledge work lags because enterprise workflows are messy</li>
+        <li data-target="s2">The verifiability gap explains why coding AI works and legal/sales AI doesn't — code runs or it doesn't, but enterprise output lacks binary truth</li>
+        <li data-target="s3">Stop waiting for agents to adapt to how we work — we must re-engineer processes to be machine-readable</li>
+        <li data-target="s4">SaaS isn't dead; in a world of 1000x more agents than people, deterministic systems of record become more valuable, not less</li>
+        <li data-target="s5">The real potential of AI isn't cost cutting — it's using agents to tackle ambitious projects that were previously too expensive to even attempt</li>
+      </ul>
+    </div>
+
+    <div class="narrative-section" id="s1" data-section="s1">
+      <div class="section-label"><span class="num">01</span> A tale of two adoption curves <span class="line"></span></div>
+      <p>Levie opened by framing enterprise AI adoption as a <span class="highlight">"barbell"</span> — two extremes with little in between. On one side, the quick wins: deploying AI copilots across the organization, checking the box on broad access. On the other, the <strong>deep workflow reinvention</strong> that actually drives ROI — automating contract processes, re-engineering wealth management onboarding from a two-week process to a one-hour one, extracting upsell insights from unstructured customer data.</p>
+      <p>The problem, he argued, isn't the technology. It's that most companies are stuck in the shallow end, deploying copilots without rethinking the workflows those copilots are supposed to improve. Three to five genuine workflow wins over the next year or two, he said, would be the real differentiator.</p>
+    </div>
+
+    <div class="narrative-section" id="s2" data-section="s2">
+      <div class="section-label"><span class="num">02</span> The verifiability gap <span class="line"></span></div>
+      <p>Why has AI exploded in software development but stalled in the broader knowledge economy? Levie offered one of the session's sharpest insights: <strong>code is binary</strong>. It runs or it doesn't. You can test it, verify it, ship it. Legal documents, sales proposals, financial analyses? There's no equivalent "compile and run" button. The output is probabilistic, and enterprises don't have frameworks to verify it at scale.</p>
+      <p>This <span class="highlight">verifiability gap</span> explains the CIO frustration he was clearly channeling. Companies are watching engineering teams achieve 10x productivity while their legal, HR, and sales teams see marginal improvements. The gap isn't in model capability — it's in the nature of the work itself.</p>
+    </div>
+
+    <div class="pull-quote">
+      <p>"Instead of thinking agents will adapt to how we work, we will have to adapt to how agents work."</p>
+      <div class="attribution">— Aaron Levie, on enterprise workflow reinvention</div>
+    </div>
+
+    <div class="narrative-section" id="s3" data-section="s3">
+      <div class="section-label"><span class="num">03</span> Adapt to how agents work <span class="line"></span></div>
+      <p>Here Levie delivered his central thesis — and it was a provocation aimed squarely at the CIOs in the room. The prevailing assumption is that AI agents will learn to navigate our existing processes. Levie flipped it: <strong>we will have to adapt to how agents work</strong>. Processes need to become machine-readable. Data needs to be structured for agent consumption. Workflows need to be re-engineered from the ground up, not papered over with a chatbot.</p>
+      <p>He illustrated this with an enterprise reality everyone recognized: you can't layer AI over broken analog processes and expect transformation. The contracts buried in file shares, the approval chains that exist only in someone's head, the unstructured memos that encode institutional knowledge — all of it needs to be made legible to agents before agents can act on it.</p>
+    </div>
+
+    <div class="insight-card">
+      <div class="label">Key Insight</div>
+      <p>In a world with <strong>1000x more agents than people</strong> in an enterprise — all probabilistic, all making the wrong decision some percentage of the time — the value of deterministic systems that traffic-cop what agents can access and do actually <strong>goes up</strong>, not down.</p>
+    </div>
+
+    <div class="narrative-section" id="s4" data-section="s4">
+      <div class="section-label"><span class="num">04</span> SaaS is not dead — it's evolving <span class="line"></span></div>
+      <p>When pressed on the "SaaS is dead" narrative popular on Twitter, Levie was characteristically direct: <strong>"You might imagine I'm going to say SaaS is not dead."</strong> But his defense was nuanced, not defensive. He conceded two things: software will be cheaper to build (more competition, lower prices) and agents will absorb some capabilities currently handled by software. Both inevitable.</p>
+      <p>What he rejected was the idea that enterprises would vibe-code their own ERP systems. Citing Geoffrey Moore's <span class="highlight">core versus context</span> framework, he argued that building commodity software is never where you'd deploy scarce resources. And then he made the stronger case: in a world of a thousand agents per enterprise, all non-deterministic and probabilistic, the <strong>deterministic systems</strong> that govern what agents can access, what data they can modify, and what workflows they can execute become more valuable, not less. The system of record becomes the traffic cop in an agentic world.</p>
+    </div>
+
+    <div class="narrative-section" id="s5" data-section="s5">
+      <div class="section-label"><span class="num">05</span> Use agents to be more ambitious <span class="line"></span></div>
+      <p>Levie closed with a reframe that elevated the entire conversation. The instinct, he noted, is to use AI to do smaller things cheaper. <strong>The real unlock is using it to do bigger things faster.</strong> When agents lower the cost of experimentation by 10x, the ambitious projects that used to take three years to validate can be tested in two weeks. The ROI calculation flips entirely.</p>
+      <p>"Use agents to be more ambitious," he urged the CIO audience. Not just to cut costs, but to tackle the projects that were always too daunting to attempt — the ones that could actually transform a business. It was a fitting close from a CEO who has spent his career arguing that enterprise software should expand what's possible, not just optimize what already exists.</p>
+    </div>
+
+    <div class="pull-quote">
+      <p>"Use agents to be more ambitious and to actually do way more as an organization — not just the smaller things, but actually the bigger things."</p>
+      <div class="attribution">— Aaron Levie, on the real potential of AI</div>
+    </div>
+    </div><!-- /tab-narrative -->
+
+    <div class="tab-content" id="tab-quicktake">
+      <div class="quick-take">
+        <div class="qt-section" id="qt-tldr" data-section="qt-tldr">
+          <div class="qt-label">TL;DR</div>
+          <div class="qt-tldr">"Tale of Two Cities" — engineering adopts AI rapidly because code is verifiable (it runs or it doesn't), while general knowledge work lags because enterprise workflows are messy and lack binary verification. Companies must restructure work itself, not just layer AI on top.</div>
+        </div>
+
+        <div class="qt-section" id="qt-points" data-section="qt-points">
+          <div class="qt-label">Top 3 Points</div>
+          <ul class="qt-points">
+            <li>
+              <div class="qt-point-title">Adapting to Agents</div>
+              <div class="qt-point-body">Stop waiting for agents to adapt to our workflows — re-engineer processes to be machine-readable. You can't layer AI over broken analog processes and expect ROI.</div>
+            </li>
+            <li>
+              <div class="qt-point-title">Verifiability Gap</div>
+              <div class="qt-point-body">Coding works because code runs or doesn't — binary verification. Legal, sales, and knowledge work lack this, explaining why AI ROI is lagging outside engineering.</div>
+            </li>
+            <li>
+              <div class="qt-point-title">Unstructured Data</div>
+              <div class="qt-point-body">The biggest opportunity is unlocking value trapped in contracts, memos, and records — the unstructured enterprise data that agents need to be useful but can't yet access systematically.</div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="qt-section" id="qt-quote" data-section="qt-quote">
+          <div class="qt-label">Best Quote</div>
+          <div class="qt-quote">
+            <p>"Instead of thinking agents will adapt to how we work, we will have to adapt to how agents work."</p>
+          </div>
+        </div>
+
+        <div class="qt-section" id="qt-why" data-section="qt-why">
+          <div class="qt-label">Why It Matters</div>
+          <div class="qt-why">Levie explains the CIO frustration with slow AI ROI — you can't layer AI over broken analog processes and expect transformation. The answer isn't better models; it's restructuring work itself to be machine-readable. This reframes AI adoption from a technology problem to an organizational design problem.</div>
+        </div>
+      </div>
+    </div><!-- /tab-quicktake -->
+
+  </main>
 </div>
 
 <div class="footer">
@@ -44,6 +167,92 @@
     <a href="kevin-scott.html">Kevin Scott →</a>
   </div>
 </div>
+
+<script>
+let clickLock = null;
+
+const sectionObserver = new IntersectionObserver((entries) => {
+  if (clickLock) return;
+  entries.forEach(entry => {
+    if (entry.isIntersecting) setActiveNav(entry.target.dataset.section);
+  });
+}, { rootMargin: '-20% 0px -60% 0px', threshold: 0 });
+
+document.querySelectorAll('#tab-narrative [data-section]').forEach(s => sectionObserver.observe(s));
+
+const narrativeNav = [
+  { target: 'tldrOpener', label: 'Key Takeaways' },
+  { target: 's1', label: 'A tale of two adoption curves' },
+  { target: 's2', label: 'The verifiability gap' },
+  { target: 's3', label: 'Adapt to how agents work' },
+  { target: 's4', label: 'SaaS is not dead — it\'s evolving' },
+  { target: 's5', label: 'Use agents to be more ambitious' },
+];
+const quickTakeNav = [
+  { target: 'qt-tldr', label: 'TL;DR' },
+  { target: 'qt-points', label: 'Top 3 Points' },
+  { target: 'qt-quote', label: 'Best Quote' },
+  { target: 'qt-why', label: 'Why It Matters' },
+];
+
+const navList = document.querySelector('.nav-list');
+function rebuildNav(items) {
+  navList.innerHTML = items.map(i => `<li data-target="${i.target}">${i.label}</li>`).join('');
+  navList.querySelectorAll('li[data-target]').forEach(item => {
+    item.addEventListener('click', () => {
+      const id = item.dataset.target;
+      const target = document.getElementById(id);
+      if (target) {
+        clickLock = id;
+        setActiveNav(id);
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        target.classList.add('flash');
+        setTimeout(() => { target.classList.remove('flash'); clickLock = null; }, 1500);
+      }
+    });
+  });
+  reobserveSections();
+}
+
+function reobserveSections() {
+  sectionObserver.disconnect();
+  const activeTab = document.querySelector('.tab-content.active');
+  if (activeTab) {
+    activeTab.querySelectorAll('[data-section]').forEach(s => sectionObserver.observe(s));
+  }
+}
+
+function setActiveNav(id) {
+  navList.querySelectorAll('li[data-target]').forEach(item => {
+    item.classList.toggle('active', item.dataset.target === id);
+  });
+}
+
+document.querySelectorAll('.content-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.content-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+    rebuildNav(tab.dataset.tab === 'quicktake' ? quickTakeNav : narrativeNav);
+    document.querySelector('.content-tabs').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+
+document.querySelectorAll('.tldr-opener [data-target], .nav-list [data-target]').forEach(item => {
+  item.addEventListener('click', () => {
+    const id = item.dataset.target;
+    const target = document.getElementById(id);
+    if (target) {
+      clickLock = id;
+      setActiveNav(id);
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      target.classList.add('flash');
+      setTimeout(() => { target.classList.remove('flash'); clickLock = null; }, 1500);
+    }
+  });
+});
+</script>
 
 <script src="../js/shared.js"></script>
 </body>
