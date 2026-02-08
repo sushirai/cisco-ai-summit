@@ -118,6 +118,77 @@
     margin-bottom: 28px;
   }
 
+  /* ── Video link ── */
+  .video-link {
+    display: block;
+    text-decoration: none;
+    margin-top: 16px;
+    margin-bottom: 8px;
+  }
+
+  .video-thumb {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    aspect-ratio: 16/9;
+  }
+
+  .video-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7);
+    transition: filter 0.3s ease;
+  }
+
+  .video-link:hover .video-thumb img {
+    filter: brightness(0.9);
+  }
+
+  .play-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 48px;
+    height: 48px;
+    background: rgba(0,0,0,0.6);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+  }
+
+  .video-link:hover .play-overlay {
+    background: rgba(78, 205, 196, 0.8);
+  }
+
+  .play-overlay svg {
+    margin-left: 3px;
+  }
+
+  .video-time {
+    position: absolute;
+    bottom: 6px;
+    right: 6px;
+    background: rgba(0,0,0,0.8);
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+
+  .video-label {
+    display: block;
+    font-size: 11px;
+    color: rgba(255,255,255,0.35);
+    margin-top: 8px;
+    letter-spacing: 0.5px;
+  }
+
   /* ── TL;DR in sidebar ── */
   .tldr-label {
     font-size: 10px;
@@ -303,23 +374,30 @@
       <div class="speaker-name">Sam Altman</div>
       <div class="speaker-role">CEO, OpenAI</div>
       <div class="speaker-bio">
-        The person whose product decisions — from API pricing to agent capabilities — will directly determine how enterprise organizations work in 12-24 months. When he says "the capability overhang is the biggest it's ever been," that's a signal about what's landing on your desk next quarter.
+        Introduced by G2 Patel as "the person that actually created the movement — man needs no introduction." Cisco revealed they're OpenAI's first design partner for Codex, with AI Defense going 100% Codex-written within weeks.
       </div>
-      <a href="https://www.youtube.com/live/YO2PVbtpb_A?t=1094" target="_blank" style="display:inline-flex;align-items:center;gap:6px;font-size:12px;color:#4ecdc4;text-decoration:none;margin-top:12px;opacity:0.7;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-        Watch this segment
+
+      <a href="https://www.youtube.com/live/YO2PVbtpb_A?t=1094" target="_blank" class="video-link">
+        <div class="video-thumb">
+          <img src="https://img.youtube.com/vi/YO2PVbtpb_A/hqdefault.jpg" alt="Watch segment" />
+          <div class="play-overlay">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          </div>
+          <div class="video-time">18:14</div>
+        </div>
+        <span class="video-label">Watch this segment</span>
       </a>
 
       <div class="divider"></div>
 
       <div class="tldr-label">TL;DR</div>
       <ul class="tldr-list">
-        <li data-section="s1">Codex is his "second ChatGPT moment" — Cisco going 100% Codex-written</li>
-        <li data-section="s2">Upper limit: "full AI companies" that build businesses, not just code</li>
-        <li data-section="s3">Gave Codex full computer control — couldn't resist after 2 hours</li>
-        <li data-section="s4">Real blockers: software isn't built for human+AI co-use</li>
-        <li data-section="s5">Capability overhang is now larger than pre-ChatGPT</li>
-        <li data-section="s6">Models feel ~10x better by end of 2026</li>
+        <li data-section="s1">AI coding agents have crossed a threshold — entire products are now being written without human code</li>
+        <li data-section="s2">The endgame isn't AI tools, it's AI that can build and run entire companies autonomously</li>
+        <li data-section="s3">Even the CEO of OpenAI couldn't resist giving an AI agent full control of his computer — the productivity gain is that compelling</li>
+        <li data-section="s4">Your existing software stack (Slack, CRMs, etc.) will break when AI agents and humans try to share the same tools</li>
+        <li data-section="s5">AI is already far more capable than what enterprises use it for — the gap is the widest it's ever been, and companies slow to adopt will lose</li>
+        <li data-section="s6">Expect models to feel roughly 10x better by end of 2026 — and demand for AI compute to grow like electricity demand: infinite at the right price</li>
       </ul>
     </div>
   </aside>
