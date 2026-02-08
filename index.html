@@ -83,6 +83,50 @@
     padding-left: 20px;
   }
 
+  .tldr {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 32px 36px;
+    margin-bottom: 48px;
+  }
+
+  .tldr .label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #4ecdc4;
+    margin-bottom: 20px;
+    font-weight: 700;
+  }
+
+  .tldr ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .tldr li {
+    font-size: 15px;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.7;
+    padding: 8px 0;
+    padding-left: 20px;
+    position: relative;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+
+  .tldr li:last-child {
+    border-bottom: none;
+  }
+
+  .tldr li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #4ecdc4;
+    font-weight: 600;
+  }
+
   .pull-quote {
     margin: 56px 0;
     padding: 40px 0;
@@ -185,6 +229,18 @@
     <div class="speaker-bio">
       The person whose product decisions — from API pricing to agent capabilities — will directly determine how enterprise organizations work in 12-24 months. When he says "the capability overhang is the biggest it's ever been," that's not abstract futurism — it's a signal about what's landing on your desk next quarter.
     </div>
+  </div>
+
+  <div class="tldr">
+    <div class="label">TL;DR</div>
+    <ul>
+      <li>Codex is his "second ChatGPT moment" — Cisco's AI Defense product going 100% Codex-written within weeks</li>
+      <li>The upper limit he sees: <strong>"full AI companies"</strong> — AI that builds businesses, not just code</li>
+      <li>The <strong>capability overhang</strong> (gap between what AI can do vs what orgs use it for) is now larger than pre-ChatGPT</li>
+      <li>Real blockers aren't model intelligence — it's that existing software isn't built for human+AI co-use</li>
+      <li>Prediction: models feel <strong>~10x better by end of 2026</strong></li>
+      <li>Companies not set up for "AI co-workers" will be at a <strong>huge disadvantage</strong></li>
+    </ul>
   </div>
 
   <div class="pull-quote">
