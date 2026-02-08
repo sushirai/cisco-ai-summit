@@ -478,12 +478,10 @@ const sections = document.querySelectorAll('.narrative-section[data-section]');
 const navItems = document.querySelectorAll('.nav-list li[data-target]');
 
 const sectionObserver = new IntersectionObserver((entries) => {
+  if (clickLock) return; // respect click override
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      const id = entry.target.dataset.section;
-      navItems.forEach(item => {
-        item.classList.toggle('active', item.dataset.target === id);
-      });
+      setActiveNav(entry.target.dataset.section);
     }
   });
 }, { rootMargin: '-20% 0px -60% 0px', threshold: 0 });
@@ -491,13 +489,27 @@ const sectionObserver = new IntersectionObserver((entries) => {
 sections.forEach(s => sectionObserver.observe(s));
 
 // ── Click to scroll (both TL;DR opener and sidebar nav) ──
+let clickLock = null;
+function setActiveNav(id) {
+  navItems.forEach(item => {
+    item.classList.toggle('active', item.dataset.target === id);
+  });
+}
+
 document.querySelectorAll('[data-target]').forEach(item => {
   item.addEventListener('click', () => {
-    const target = document.getElementById(item.dataset.target);
+    const id = item.dataset.target;
+    const target = document.getElementById(id);
     if (target) {
+      // Lock nav to clicked section for 1.5s (overrides observer)
+      clickLock = id;
+      setActiveNav(id);
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       target.classList.add('flash');
-      setTimeout(() => target.classList.remove('flash'), 1500);
+      setTimeout(() => {
+        target.classList.remove('flash');
+        clickLock = null;
+      }, 1500);
     }
   });
 });
