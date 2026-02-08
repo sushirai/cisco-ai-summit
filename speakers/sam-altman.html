@@ -121,12 +121,12 @@
 
     <div class="tab-content" id="tab-quicktake">
       <div class="quick-take">
-        <div class="qt-section">
+        <div class="qt-section" id="qt-tldr" data-section="qt-tldr">
           <div class="qt-label">TL;DR</div>
           <div class="qt-tldr">We are in a period of "capability overhang" where models are far more powerful than current usage reflects, and the shift to "agentic" workflows — where AI acts as a teammate rather than a tool — is the next massive transformation.</div>
         </div>
 
-        <div class="qt-section">
+        <div class="qt-section" id="qt-points" data-section="qt-points">
           <div class="qt-label">Top 3 Points</div>
           <ul class="qt-points">
             <li>
@@ -144,14 +144,14 @@
           </ul>
         </div>
 
-        <div class="qt-section">
+        <div class="qt-section" id="qt-quote" data-section="qt-quote">
           <div class="qt-label">Best Quote</div>
           <div class="qt-quote">
             <p>"I think the companies that are not set up to be able to adopt… AI co-workers very quickly… will be at a huge disadvantage."</p>
           </div>
         </div>
 
-        <div class="qt-section">
+        <div class="qt-section" id="qt-why" data-section="qt-why">
           <div class="qt-label">Why It Matters</div>
           <div class="qt-why">Altman provides a glimpse into the near future where AI agents execute end-to-end work (like coding an entire app), warning enterprises that failing to reorganize their workflows for "AI teammates" will leave them obsolete.</div>
         </div>
@@ -171,8 +171,6 @@
 </div>
 
 <script>
-const sections = document.querySelectorAll('[data-section]');
-const navItems = document.querySelectorAll('.nav-list li[data-target]');
 let clickLock = null;
 
 const sectionObserver = new IntersectionObserver((entries) => {
@@ -182,10 +180,59 @@ const sectionObserver = new IntersectionObserver((entries) => {
   });
 }, { rootMargin: '-20% 0px -60% 0px', threshold: 0 });
 
-sections.forEach(s => sectionObserver.observe(s));
+// Initial observe for narrative tab
+document.querySelectorAll('#tab-narrative [data-section]').forEach(s => sectionObserver.observe(s));
+
+// ── Sidebar nav data for each tab ──
+const narrativeNav = [
+  { target: 'tldrOpener', label: 'Key Takeaways' },
+  { target: 's1', label: 'AI coding agents crossed a threshold' },
+  { target: 's2', label: 'Endgame: full AI companies' },
+  { target: 's3', label: 'The two-hour capitulation' },
+  { target: 's4', label: 'Your software stack will break' },
+  { target: 's5', label: 'The capability overhang' },
+  { target: 's6', label: '10x better by end of 2026' },
+];
+const quickTakeNav = [
+  { target: 'qt-tldr', label: 'TL;DR' },
+  { target: 'qt-points', label: 'Top 3 Points' },
+  { target: 'qt-quote', label: 'Best Quote' },
+  { target: 'qt-why', label: 'Why It Matters' },
+];
+
+const navList = document.querySelector('.nav-list');
+function rebuildNav(items) {
+  navList.innerHTML = items.map(i => `<li data-target="${i.target}">${i.label}</li>`).join('');
+  // Re-bind click handlers
+  navList.querySelectorAll('li[data-target]').forEach(item => {
+    item.addEventListener('click', () => {
+      const id = item.dataset.target;
+      const target = document.getElementById(id);
+      if (target) {
+        clickLock = id;
+        setActiveNav(id);
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        target.classList.add('flash');
+        setTimeout(() => { target.classList.remove('flash'); clickLock = null; }, 1500);
+      }
+    });
+  });
+  // Re-observe sections for the active tab
+  reobserveSections();
+}
+
+function reobserveSections() {
+  sectionObserver.disconnect();
+  const activeTab = document.querySelector('.tab-content.active');
+  if (activeTab) {
+    activeTab.querySelectorAll('[data-section]').forEach(s => sectionObserver.observe(s));
+  }
+}
 
 function setActiveNav(id) {
-  navItems.forEach(item => item.classList.toggle('active', item.dataset.target === id));
+  navList.querySelectorAll('li[data-target]').forEach(item => {
+    item.classList.toggle('active', item.dataset.target === id);
+  });
 }
 
 // ── Tab switching ──
@@ -195,10 +242,13 @@ document.querySelectorAll('.content-tab').forEach(tab => {
     document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
     tab.classList.add('active');
     document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+    rebuildNav(tab.dataset.tab === 'quicktake' ? quickTakeNav : narrativeNav);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 });
 
-document.querySelectorAll('[data-target]').forEach(item => {
+// Bind initial click handlers for TL;DR links and nav items
+document.querySelectorAll('.tldr-opener [data-target], .nav-list [data-target]').forEach(item => {
   item.addEventListener('click', () => {
     const id = item.dataset.target;
     const target = document.getElementById(id);
