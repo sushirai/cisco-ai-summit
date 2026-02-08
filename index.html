@@ -159,12 +159,6 @@
 
   /* ── Sidebar nav (appears after scroll) ── */
   .sidebar-nav {
-    opacity: 0;
-    transform: translateY(8px);
-    transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
-    pointer-events: none;
-  }
-  .sidebar-nav.visible {
     opacity: 1;
     transform: translateY(0);
     pointer-events: all;
@@ -450,18 +444,6 @@
 // ── Show sidebar nav when TL;DR scrolls out of view ──
 const tldrOpener = document.getElementById('tldrOpener');
 const sidebarNav = document.getElementById('sidebarNav');
-
-const tldrObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      sidebarNav.classList.remove('visible');
-    } else {
-      sidebarNav.classList.add('visible');
-    }
-  });
-}, { threshold: 0 });
-
-tldrObserver.observe(tldrOpener);
 
 // ── Scroll-linked section highlighting ──
 const sections = document.querySelectorAll('.narrative-section[data-section]');
