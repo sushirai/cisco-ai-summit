@@ -409,17 +409,7 @@ body {
   color: var(--text-heading);
   font-weight: 600;
   border-left-color: var(--accent);
-  transform: translateX(4px);
-}
-.nav-list li.active::after {
-  content: '';
-  position: absolute;
-  left: -2px;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: var(--accent);
-  box-shadow: 0 0 8px var(--accent-glow);
+  box-shadow: -1px 0 8px var(--accent-glow);
 }
 
 /* ── Right content ── */
