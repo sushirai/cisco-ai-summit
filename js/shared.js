@@ -11,7 +11,7 @@
     { name:"Tareq Amin", role:"CEO, HUMAIN", slug:"tk-humane" },
     { name:"Matt Garman", role:"CEO, Amazon Web Services", slug:"matt-garman" },
     { name:"Neuberger & McGurk", role:"Geopolitics Panel", slug:"anne-neuberger" },
-    { name:"Marc Andreessen", role:"GP, a16z", slug:"marc-andreessen" }
+    { name:"Marc Andreessen", role:"Co-Founder & Managing Partner, a16z", slug:"marc-andreessen" }
   ];
 
   // Detect depth
