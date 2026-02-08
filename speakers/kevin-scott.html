@@ -73,7 +73,7 @@
 
     <div class="narrative-section" id="s1" data-section="s1">
       <div class="section-label"><span class="num">01</span> Seven years of seeing it coming <span class="line"></span></div>
-      <p>G2 Patel introduced Scott with a personal anecdote: seven years ago, he'd asked the Microsoft CTO what was coming, and Scott had simply shaken his head and said <strong>"everything is going to get turned upside down."</strong> That prediction anchored the entire conversation. Scott confirmed the trajectory wasn't surprising — scaling laws were clearly going to work, models were going to behave like platforms — but the <em>speed</em> exceeded even his expectations.</p>
+      <p>Jeetu Patel introduced Scott with a personal anecdote: seven years ago, he'd asked the Microsoft CTO what was coming, and Scott had simply shaken his head and said <strong>"everything is going to get turned upside down."</strong> That prediction anchored the entire conversation. Scott confirmed the trajectory wasn't surprising — scaling laws were clearly going to work, models were going to behave like platforms — but the <em>speed</em> exceeded even his expectations.</p>
       <p>This wasn't false modesty. As the architect of Microsoft's partnership with OpenAI, Scott had a front-row seat to the shift from narrow machine learning (predicting ad clicks) to <span class="highlight">general-purpose AI platforms</span> that anyone could build on. His proudest achievement, he said, was helping democratize access — making it so anyone with an API key could start building, rather than having one Silicon Valley company decide what gets done with AI.</p>
     </div>
 
@@ -235,7 +235,9 @@ document.querySelectorAll('.content-tab').forEach(tab => {
     tab.classList.add('active');
     document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
     rebuildNav(tab.dataset.tab === 'quicktake' ? quickTakeNav : narrativeNav);
-    document.querySelector('.content-tabs').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const tabsRect = document.querySelector('.content-tabs').getBoundingClientRect();
+    const tabsTop = window.scrollY + tabsRect.top - 48;
+    window.scrollTo({ top: Math.max(0, tabsTop), behavior: 'smooth' });
   });
 });
 

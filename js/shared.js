@@ -2,9 +2,9 @@
 (function() {
   const speakers = [
     { name:"Chuck Robbins", role:"CEO, Cisco", slug:"chuck-robbins" },
-    { name:"G2 Patel", role:"EVP, Cisco", slug:"g2-patel" },
+    { name:"Jeetu Patel", role:"EVP, Cisco", slug:"g2-patel" },
     { name:"Sam Altman", role:"CEO, OpenAI", slug:"sam-altman" },
-    { name:"Lip-Bu Tan", role:"CEO, Intel", slug:"lip-bu-tan" },
+    { name:"Lip-Bu Tan", role:"Chairman, Walden International", slug:"lip-bu-tan" },
     { name:"Dylan Field", role:"CEO, Figma", slug:"dylan-field" },
     { name:"Aaron Levie", role:"CEO, Box", slug:"aaron-levie" },
     { name:"Kevin Scott", role:"CTO, Microsoft", slug:"kevin-scott" },

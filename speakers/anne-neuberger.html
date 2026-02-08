@@ -225,7 +225,9 @@ document.querySelectorAll('.content-tab').forEach(tab => {
     tab.classList.add('active');
     document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
     rebuildNav(tab.dataset.tab === 'quicktake' ? quickTakeNav : narrativeNav);
-    document.querySelector('.content-tabs').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const tabsRect = document.querySelector('.content-tabs').getBoundingClientRect();
+    const tabsTop = window.scrollY + tabsRect.top - 48;
+    window.scrollTo({ top: Math.max(0, tabsTop), behavior: 'smooth' });
   });
 });
 

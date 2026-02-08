@@ -24,7 +24,7 @@
   <aside class="sidebar">
     <div class="sidebar-inner">
       <div class="speaker-name">Lip-Bu Tan</div>
-      <div class="speaker-role">CEO, Intel</div>
+      <div class="speaker-role">Chairman, Walden International</div>
       <div class="speaker-bio">CEO of Intel, leading the company's turnaround through foundry modernization and AI chip strategy. A veteran semiconductor investor and former CEO of Cadence Design Systems, Tan brings deep expertise in the physical infrastructure that makes AI possible.</div>
 
       <a href="https://www.youtube.com/live/YO2PVbtpb_A?t=3600" target="_blank" class="video-link">
@@ -225,7 +225,9 @@ document.querySelectorAll('.content-tab').forEach(tab => {
     tab.classList.add('active');
     document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
     rebuildNav(tab.dataset.tab === 'quicktake' ? quickTakeNav : narrativeNav);
-    document.querySelector('.content-tabs').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const tabsRect = document.querySelector('.content-tabs').getBoundingClientRect();
+    const tabsTop = window.scrollY + tabsRect.top - 48;
+    window.scrollTo({ top: Math.max(0, tabsTop), behavior: 'smooth' });
   });
 });
 

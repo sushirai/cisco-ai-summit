@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cisco AI Summit 2026 — G2 Patel</title>
+<title>Cisco AI Summit 2026 — Jeetu Patel</title>
 <link rel="stylesheet" href="../css/shared.css">
 </head>
 <body data-current-speaker="g2-patel">
@@ -23,7 +23,7 @@
 <div class="content-wrap">
   <aside class="sidebar">
     <div class="sidebar-inner">
-      <div class="speaker-name">G2 Patel</div>
+      <div class="speaker-name">Jeetu Patel</div>
       <div class="speaker-role">EVP & Chief Product Officer, Cisco</div>
       <div class="speaker-bio">Executive Vice President and Chief Product Officer at Cisco, leading the company's product strategy across networking, security, and AI infrastructure. The architect of Cisco's AI Defense platform and the summit's primary interviewer.</div>
 
@@ -75,7 +75,7 @@
 
     <div class="narrative-section" id="s1" data-section="s1">
       <div class="section-label"><span class="num">01</span> Three constraints holding AI back <span class="line"></span></div>
-      <p>G2 Patel took the stage with a joke — "I have no idea what we're going to do next year with the lineup" — before cutting straight to the framework that would anchor every conversation that followed. AI, he argued, faces <strong>three major constraints</strong>. First: <span class="highlight">infrastructure</span>. There simply isn't enough power, compute, network bandwidth, and memory to satiate AI's appetite, and the industry is spending trillions to close the gap. Second: the <span class="highlight">trust deficit</span> that Chuck Robbins had just introduced — the fact that if people don't trust AI systems, they'll never use them. And third: a <span class="highlight">data gap</span>. The public internet's supply of human-generated training data is running out. Synthetic data and machine-generated data from agents working 24/7 are filling the void, but this creates its own new dynamics. Three constraints, each enormous, each interconnected.</p>
+      <p>Jeetu Patel took the stage with a joke — "I have no idea what we're going to do next year with the lineup" — before cutting straight to the framework that would anchor every conversation that followed. AI, he argued, faces <strong>three major constraints</strong>. First: <span class="highlight">infrastructure</span>. There simply isn't enough power, compute, network bandwidth, and memory to satiate AI's appetite, and the industry is spending trillions to close the gap. Second: the <span class="highlight">trust deficit</span> that Chuck Robbins had just introduced — the fact that if people don't trust AI systems, they'll never use them. And third: a <span class="highlight">data gap</span>. The public internet's supply of human-generated training data is running out. Synthetic data and machine-generated data from agents working 24/7 are filling the void, but this creates its own new dynamics. Three constraints, each enormous, each interconnected.</p>
     </div>
 
     <div class="narrative-section" id="s2" data-section="s2">
@@ -85,7 +85,7 @@
 
     <div class="pull-quote">
       <p>"Token generation is going to be one of the core currencies of every company and every country... your ability to economically and efficiently generate tokens will be directly proportionate to national security."</p>
-      <div class="attribution">— G2 Patel, on AI economics</div>
+      <div class="attribution">— Jeetu Patel, on AI economics</div>
     </div>
 
     <div class="narrative-section" id="s3" data-section="s3">
@@ -110,7 +110,7 @@
 
     <div class="pull-quote">
       <p>"AI is moving at a pace much faster than organizations have the capacity to absorb it. That's actually something that has to get solved for."</p>
-      <div class="attribution">— G2 Patel, on the absorption gap</div>
+      <div class="attribution">— Jeetu Patel, on the absorption gap</div>
     </div>
 
     <div class="narrative-section" id="s6" data-section="s6">
@@ -238,7 +238,9 @@ document.querySelectorAll('.content-tab').forEach(tab => {
     tab.classList.add('active');
     document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
     rebuildNav(tab.dataset.tab === 'quicktake' ? quickTakeNav : narrativeNav);
-    document.querySelector('.content-tabs').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const tabsRect = document.querySelector('.content-tabs').getBoundingClientRect();
+    const tabsTop = window.scrollY + tabsRect.top - 48;
+    window.scrollTo({ top: Math.max(0, tabsTop), behavior: 'smooth' });
   });
 });
 
