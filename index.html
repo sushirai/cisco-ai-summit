@@ -52,12 +52,13 @@ const themeOrder = [
   { key:"visionaries", label:"The Visionaries — Big Picture" }
 ];
 
-const img = "https://img.youtube.com/vi/YO2PVbtpb_A/hqdefault.jpg";
+const fallbackImg = "https://img.youtube.com/vi/YO2PVbtpb_A/hqdefault.jpg";
 const grid = document.getElementById('speakerGrid');
 
 function cardHTML(s) {
+  const headshot = `img/${s.slug}.jpg`;
   return `<a class="speaker-card" href="speakers/${s.slug}.html" data-slug="${s.slug}" data-themes="${s.themes.join(',')}">
-    <div class="card-img"><img src="${img}" alt="${s.name}"></div>
+    <div class="card-img"><img src="${headshot}" alt="${s.name}" onerror="this.src='${fallbackImg}'"></div>
     <div class="card-body">
       <div class="card-name">${s.name}</div>
       <div class="card-role">${s.role}</div>
