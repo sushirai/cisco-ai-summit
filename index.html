@@ -389,6 +389,7 @@
         <div class="divider"></div>
         <div class="nav-label">Sections</div>
         <ul class="nav-list">
+          <li data-target="tldrOpener">Key Takeaways</li>
           <li data-target="s1">AI coding agents crossed a threshold</li>
           <li data-target="s2">Endgame: full AI companies</li>
           <li data-target="s3">The two-hour capitulation</li>
@@ -404,7 +405,7 @@
   <main class="main-content">
 
     <!-- TL;DR as article opener -->
-    <div class="tldr-opener" id="tldrOpener">
+    <div class="tldr-opener" id="tldrOpener" data-section="tldrOpener">
       <div class="label">Key Takeaways</div>
       <ul>
         <li data-target="s1">AI coding agents have crossed a threshold — entire products are now being written without human code</li>
@@ -474,7 +475,7 @@ const tldrOpener = document.getElementById('tldrOpener');
 const sidebarNav = document.getElementById('sidebarNav');
 
 // ── Scroll-linked section highlighting ──
-const sections = document.querySelectorAll('.narrative-section[data-section]');
+const sections = document.querySelectorAll('[data-section]');
 const navItems = document.querySelectorAll('.nav-list li[data-target]');
 
 const sectionObserver = new IntersectionObserver((entries) => {
