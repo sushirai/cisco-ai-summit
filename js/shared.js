@@ -8,7 +8,7 @@
     { name:"Dylan Field", role:"CEO, Figma", slug:"dylan-field" },
     { name:"Aaron Levie", role:"CEO, Box", slug:"aaron-levie" },
     { name:"Kevin Scott", role:"CTO, Microsoft", slug:"kevin-scott" },
-    { name:"TK", role:"Founder, Humane", slug:"tk-humane" },
+    { name:"Tareq Amin", role:"CEO, HUMAIN", slug:"tk-humane" },
     { name:"Matt Garman", role:"CEO, AWS", slug:"matt-garman" },
     { name:"Neuberger & McGurk", role:"Geopolitics Panel", slug:"anne-neuberger" },
     { name:"Marc Andreessen", role:"GP, a16z", slug:"marc-andreessen" }
