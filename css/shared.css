@@ -637,13 +637,14 @@ body {
   box-shadow: var(--card-hover-shadow);
 }
 .speaker-card .card-img {
-  aspect-ratio: 16/9;
+  aspect-ratio: 3/4;
   overflow: hidden;
 }
 .speaker-card .card-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top;
   filter: brightness(var(--img-brightness));
   transition: filter 0.3s;
 }
