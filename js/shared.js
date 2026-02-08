@@ -4,14 +4,13 @@
     { name:"Chuck Robbins", role:"CEO, Cisco", slug:"chuck-robbins" },
     { name:"Jeetu Patel", role:"EVP, Cisco", slug:"g2-patel" },
     { name:"Sam Altman", role:"CEO, OpenAI", slug:"sam-altman" },
-    { name:"Lip-Bu Tan", role:"Chairman, Walden International", slug:"lip-bu-tan" },
+    { name:"Lip-Bu Tan", role:"CEO, Intel", slug:"lip-bu-tan" },
     { name:"Dylan Field", role:"CEO, Figma", slug:"dylan-field" },
     { name:"Aaron Levie", role:"CEO, Box", slug:"aaron-levie" },
     { name:"Kevin Scott", role:"CTO, Microsoft", slug:"kevin-scott" },
     { name:"TK", role:"Founder, Humane", slug:"tk-humane" },
     { name:"Matt Garman", role:"CEO, AWS", slug:"matt-garman" },
-    { name:"Anne Neuberger", role:"Deputy NSA", slug:"anne-neuberger" },
-    { name:"Brett McGurk", role:"NSA", slug:"brett-mcgurk" },
+    { name:"Neuberger & McGurk", role:"Geopolitics Panel", slug:"anne-neuberger" },
     { name:"Marc Andreessen", role:"GP, a16z", slug:"marc-andreessen" }
   ];
 

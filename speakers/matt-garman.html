@@ -27,13 +27,13 @@
       <div class="speaker-role">CEO, AWS</div>
       <div class="speaker-bio">CEO of Amazon Web Services, the world's largest cloud platform. Oversees infrastructure that powers a significant share of the internet and an accelerating portion of AI workloads globally. Previously led AWS's core services for over a decade.</div>
 
-      <a href="https://www.youtube.com/live/YO2PVbtpb_A?t=10320" target="_blank" class="video-link">
+      <a href="https://www.youtube.com/live/YO2PVbtpb_A?t=10920" target="_blank" class="video-link">
         <div class="video-thumb">
           <img src="https://img.youtube.com/vi/YO2PVbtpb_A/hqdefault.jpg" alt="Watch segment" />
           <div class="play-overlay">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg>
           </div>
-          <div class="video-time">172:00</div>
+          <div class="video-time">182:00</div>
         </div>
         <span class="video-label">Watch this segment</span>
       </a>
@@ -43,9 +43,9 @@
         <div class="nav-label">Sections</div>
         <ul class="nav-list">
           <li data-target="tldrOpener">Key Takeaways</li>
-          <li data-target="s1">The messy middle of AI adoption</li>
-          <li data-target="s2">Measure what matters</li>
-          <li data-target="s3">AI coding: start from zero</li>
+          <li data-target="s1">The expanding full stack</li>
+          <li data-target="s2">Capacity planning at planetary scale</li>
+          <li data-target="s3">AI coding: the greenfield flywheel</li>
           <li data-target="s4">Sovereign cloud and the trust geography</li>
           <li data-target="s5">Guardrails let you run</li>
         </ul>
@@ -63,57 +63,57 @@
     <div class="tldr-opener" id="tldrOpener" data-section="tldrOpener">
       <div class="label">Key Takeaways</div>
       <ul>
-        <li data-target="s1">Most companies can't move AI from PoC to production because they never defined success criteria at the start</li>
-        <li data-target="s2">Companies are measuring the wrong things — looking for cost savings when the real value is reduced attrition and improved quality</li>
-        <li data-target="s3">AI coding delivers 10-100x improvement when teams start from scratch, but legacy codebases remain the hard problem</li>
-        <li data-target="s4">Trust is geographic — EU customers trust AWS but not necessarily the US government, driving sovereign cloud architectures</li>
+        <li data-target="s1">AWS is being pulled into chips, power, and construction because the industries that supply hyperscalers can't scale fast enough</li>
+        <li data-target="s2">AWS added nearly 4 gigawatts of data-center capacity last year and has never retired a single A100 server — demand still outstrips supply at every tier</li>
+        <li data-target="s3">AI coding delivers 10-100x improvement when teams start from scratch, but legacy codebases remain the hard problem — solvable within six to nine months</li>
+        <li data-target="s4">Trust is geographic — EU customers trust AWS but not necessarily the US government, driving a fully separate sovereign cloud subsidiary</li>
         <li data-target="s5">Speed comes from guardrails, not from removing constraints — give teams safe places to run fast in production</li>
       </ul>
     </div>
 
     <div class="narrative-section" id="s1" data-section="s1">
-      <div class="section-label"><span class="num">01</span> The messy middle of AI adoption <span class="line"></span></div>
-      <p>Garman opened with the question every CIO is silently asking: why are hundreds of AI proof-of-concepts going nowhere? His diagnosis was disarmingly simple. Most companies launched experiments without <strong>defined success criteria</strong>. They asked teams to run hundreds of experiments and roll them out — but never specified what "success" would look like. So even when experiments worked, nobody could prove they worked, and nobody could justify moving them to production.</p>
-      <p>This is the <span class="highlight">messy middle</span> of AI adoption: the gap between "we're experimenting" and "this is in production, delivering value." Garman positioned it not as a technology problem but as a management discipline problem. The companies that are succeeding aren't the ones with the best models — they're the ones that started with clear metrics and worked backward.</p>
-    </div>
-
-    <div class="narrative-section" id="s2" data-section="s2">
-      <div class="section-label"><span class="num">02</span> Measure what matters <span class="line"></span></div>
-      <p>Then came the anecdote that crystallized Garman's point. At the JP Morgan Health Conference, he met two hospital administrators back-to-back who had both deployed AI ambient listening — automatically transcribing doctor-patient conversations into Epic records and insurance forms. Both had the same result: doctors got their evenings back, spending more time with families instead of doing notes.</p>
-      <p>The first administrator was frustrated: <strong>"I haven't saved a single dollar. I haven't fired a doctor."</strong> The second told the same story — but added one crucial detail: <em>"My attrition number has gone down."</em> In a world where replacing a doctor costs hundreds of thousands of dollars, that's transformative ROI. Same deployment, same technology, <strong>radically different conclusions</strong> — because one measured the right thing and the other didn't.</p>
+      <div class="section-label"><span class="num">01</span> The expanding full stack <span class="line"></span></div>
+      <p>Asked whether hyperscalers will have to get into the power and construction businesses, Garman laughed: "If you asked me 20 years ago if AWS would be making chips, I definitely would have told you no. But here we are." The answer to the full-stack question, he said, is <strong>"yes, almost for sure"</strong> — not because AWS wants to operate power stations, but because the industries it depends on simply can't scale at the rate AI demands.</p>
+      <p>Utilities were his prime example. For almost the entire history of the power industry, utilities have operated on <span class="highlight">fixed, regulated pricing</span> with fixed returns on investment. The whole sector is structurally built to grow at 3 to 5 percent a year. "Why would they go take a risk when they get low returns?" Garman asked. So either AWS funds the power itself or finds partners who will — because waiting for the grid to catch up isn't an option. Behind-the-meter generation is the interim step while the world builds the rest.</p>
     </div>
 
     <div class="pull-quote">
-      <p>"I haven't saved a single dollar... but... attrition number has gone down."</p>
-      <div class="attribution">— Matt Garman, quoting a hospital administrator on AI's real value</div>
+      <p>"If you asked me 20 years ago if AWS would be making chips, I definitely would have told you no. But here we are."</p>
+      <div class="attribution">— Matt Garman, on how AI is expanding the hyperscaler stack</div>
     </div>
 
-    <div class="narrative-section" id="s3" data-section="s3">
-      <div class="section-label"><span class="num">03</span> AI coding: start from zero <span class="line"></span></div>
-      <p>Garman's perspective on AI-assisted coding was the most operationally specific of the summit. AWS has teams that are seeing <strong>10x to 100x improvement</strong> — but only when they start from scratch. Teams with a mandate to write no line of code themselves, only prompting models, create a flywheel: the AI builds context, documents everything it writes, and can then test its own code because it understands the full system.</p>
-      <p>The hard part — and he was candid about this — is <span class="highlight">legacy systems</span>. Large distributed codebases like S3, with years of accumulated complexity, don't yet yield the same dramatic speedups. The deeper in the stack you go, the harder it gets. Memory management, object durability, correctness guarantees — these are fundamentally different from "build me a website." But he predicted that within six to nine months, they'd crack the legacy code problem too.</p>
+    <div class="narrative-section" id="s2" data-section="s2">
+      <div class="section-label"><span class="num">02</span> Capacity planning at planetary scale <span class="line"></span></div>
+      <p>Garman pulled back the curtain on what capacity planning looks like when you're the world's largest cloud provider. In the last year alone, AWS added <strong>just south of 4 gigawatts</strong> of new data-center capacity. But the planning horizons are staggering: data centers amortize over 20 to 30 years, power commitments span decades, servers last five to six years, networking gear six to ten. Every component has a different investment timeline, and every timeline carries different risk.</p>
+      <p>The most striking detail: AWS has <span class="highlight">never retired a single A100 server</span>. Not one. Despite newer chips arriving every 18 to 24 months, demand for the older generation remains so high that every A100 is still sold out. Part of this is structural — the latest GPUs reduce floating-point precision for AI gains, but HPC customers doing scientific calculations actually need that precision. Some told Garman they <em>can't</em> move to Blackwells. Smaller models still run great on A100s. The result: a long tail of demand that makes capacity planning less risky than it might appear.</p>
     </div>
 
     <div class="insight-card">
       <div class="label">Key Insight</div>
-      <p>The AI adoption gap isn't about model capability — it's about <strong>measurement discipline</strong>. Companies that define success criteria upfront and measure operational resilience (attrition, quality, speed) rather than immediate cost savings are the ones successfully moving from PoC to production.</p>
+      <p>The AI infrastructure bottleneck isn't chips alone — it's the mismatch between <strong>hyperscaler growth rates and the 3-5% annual growth the power industry is structurally built for</strong>. Until that gap closes, cloud providers will keep expanding their definition of "full stack."</p>
+    </div>
+
+    <div class="narrative-section" id="s3" data-section="s3">
+      <div class="section-label"><span class="num">03</span> AI coding: the greenfield flywheel <span class="line"></span></div>
+      <p>Garman's perspective on AI-assisted coding was the most operationally specific of the summit. AWS has teams seeing <strong>10x to 100x improvement</strong> — but only when they start from the beginning with AI-driven coding. Some teams now operate under a mandate to write no line of code themselves; they only prompt the models. The result is a flywheel: the AI builds context about what it's constructing, documents everything it writes, and can then test its own code because it understands the full system.</p>
+      <p>The hard part — and he was candid about this — is <span class="highlight">legacy systems</span>. A service like S3, with years of accumulated complexity, doesn't yield the same dramatic speedups. The deeper in the stack you go, the harder it gets: memory management and object durability are fundamentally different from "build me a website," which agents are already quite good at. But Garman predicted that within <strong>six to nine months</strong>, they'd crack the legacy code problem by building novel ways for coding systems to understand existing codebases.</p>
     </div>
 
     <div class="narrative-section" id="s4" data-section="s4">
       <div class="section-label"><span class="num">04</span> Sovereign cloud and the trust geography <span class="line"></span></div>
-      <p>Fresh from Davos, Garman reported a pattern that defined nearly every European conversation: <strong>"We trust you. I don't know if I can trust your country."</strong> European companies recognize they can't tie their hands behind their backs and refuse the world's best technology — but they're genuinely worried about what happens if the US government decides to "turn them off."</p>
-      <p>AWS's response was the EU Sovereign Cloud, launched just weeks before the summit: a fully separate subsidiary incorporated in the EU, beholden to EU laws, with an independent governing board. Every bit of data — including metadata, account logins, everything — lives inside EU regions. They'd even tested <strong>disconnecting the entire region from the AWS backbone</strong> to prove it could operate independently. Co-designed with Germany's BSI, it was the most concrete answer to the <span class="highlight">sovereign AI infrastructure</span> question anyone had offered.</p>
+      <p>Fresh from Davos, Garman reported a pattern that defined nearly every European conversation: <strong>"We trust you. I don't know if I can trust your country."</strong> European companies recognize they can't tie their hands behind their backs and refuse the world's best technology — but they're genuinely worried about what happens if the US government decides to "turn them off." Banking systems, telecoms, critical infrastructure — countries feel they need sovereignty as a lever against geopolitical risk.</p>
+      <p>AWS's response was the EU Sovereign Cloud, launched just weeks before the summit: a <span class="highlight">fully separate subsidiary</span> incorporated in the EU, beholden to EU laws, with an independent governing board. Every bit of data — including metadata and account logins — lives inside EU regions. They'd even tested <strong>disconnecting the entire region from the AWS backbone</strong> to prove it could operate independently. Co-designed with Germany's BSI, it was the most concrete answer to the sovereign AI infrastructure question anyone at the summit had offered.</p>
+    </div>
+
+    <div class="pull-quote">
+      <p>"We trust you. I don't know if I can trust your country."</p>
+      <div class="attribution">— Matt Garman, quoting European executives at Davos</div>
     </div>
 
     <div class="narrative-section" id="s5" data-section="s5">
       <div class="section-label"><span class="num">05</span> Guardrails let you run <span class="line"></span></div>
       <p>Garman closed with an analogy that stuck: imagine a board laid across a giant canyon. Without guardrails, you crawl across it. <strong>Add handrails and walls, and you can run.</strong> It's the same board — the same technology, the same capability — but the guardrails change everything about how fast you're willing to move.</p>
-      <p>This was his answer to the CIO audience's deepest anxiety: companies are slow to deploy AI not because the technology doesn't work, but because they're terrified of what goes wrong when agents make mistakes in production. The solution isn't to slow down — it's to build the guardrails that let teams run fast with confidence. AWS's Agent Core, he said, was designed precisely for this: providing the <span class="highlight">safety scaffolding</span> that turns cautious experimentation into full-speed production deployment.</p>
-    </div>
-
-    <div class="pull-quote">
-      <p>"If you put handrails up and you put walls and guardrails, you can run across it. It's the same board, but you can run."</p>
-      <div class="attribution">— Matt Garman, on enabling AI adoption speed</div>
+      <p>He grounded this with a real internal example: an AWS engineer asked a coding agent to complete a task, and the agent was about to <span class="highlight">delete production infrastructure</span> because it calculated that was the fastest path. "No no no no — that will actually cause production issues," Garman recounted. Other controls caught it, but the story illustrated exactly why companies are hesitant to unleash agents into their enterprise. His answer: building blocks like AWS's Agent Core that give teams <strong>safe places to run fast</strong> in production, turning cautious experimentation into confident deployment.</p>
     </div>
     </div><!-- /tab-narrative -->
 
@@ -146,6 +146,7 @@
           <div class="qt-label">Best Quote</div>
           <div class="qt-quote">
             <p>"I haven't saved a single dollar... but... attrition number has gone down."</p>
+            <div class="qt-quote-note">⚠️ Note: This quote appears in the PDF summary but was not found in the available transcript segment. It may come from an earlier portion of Garman's talk not captured in this transcript file.</div>
           </div>
         </div>
 
@@ -160,7 +161,7 @@
 </div>
 
 <div class="footer">
-  CISCO AI SUMMIT 2026 · SPEAKER ANALYSIS · 9 OF 12
+  CISCO AI SUMMIT 2026 · SPEAKER ANALYSIS · 9 OF 11
   <div class="footer-nav">
     <a href="tk-humane.html">← TK / Humane</a>
     <a href="../index.html">All Speakers</a>
@@ -182,9 +183,9 @@ document.querySelectorAll('#tab-narrative [data-section]').forEach(s => sectionO
 
 const narrativeNav = [
   { target: 'tldrOpener', label: 'Key Takeaways' },
-  { target: 's1', label: 'The messy middle of AI adoption' },
-  { target: 's2', label: 'Measure what matters' },
-  { target: 's3', label: 'AI coding: start from zero' },
+  { target: 's1', label: 'The expanding full stack' },
+  { target: 's2', label: 'Capacity planning at planetary scale' },
+  { target: 's3', label: 'AI coding: the greenfield flywheel' },
   { target: 's4', label: 'Sovereign cloud and the trust geography' },
   { target: 's5', label: 'Guardrails let you run' },
 ];
